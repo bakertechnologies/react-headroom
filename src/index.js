@@ -100,11 +100,13 @@ export default class Headroom extends Component {
   setRef = ref => (this.inner = ref)
 
   setHeightOffset = () => {
-    const heightOffset = this.inner.offsetHeight
-    this.setState({
-      height: heightOffset,
-    })
-    this.resizeTicking = false
+    if (this && this.inner) {
+      const heightOffset = this.inner.offsetHeight
+      this.setState({
+        height: heightOffset,
+      })
+      this.resizeTicking = false
+    }
   }
 
   getScrollY = () => {

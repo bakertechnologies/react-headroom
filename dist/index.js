@@ -55,11 +55,13 @@ var Headroom = function (_Component) {
     };
 
     _this.setHeightOffset = function () {
-      var heightOffset = _this.inner.offsetHeight;
-      _this.setState({
-        height: heightOffset
-      });
-      _this.resizeTicking = false;
+      if (_this && _this.inner) {
+        var heightOffset = _this.inner.offsetHeight;
+        _this.setState({
+          height: heightOffset
+        });
+        _this.resizeTicking = false;
+      }
     };
 
     _this.getScrollY = function () {
